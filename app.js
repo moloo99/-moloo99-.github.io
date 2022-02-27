@@ -1,15 +1,8 @@
-let voteData = {  //all this is dummy data, will be modified later on, as needed
+let voteData = {  
   "image_id": "asf2",
   "sub_id": "my-user-1234",
   "value": 1
 }
-
-let favData = {  //all this is dummy data, will be modified later on, as needed
-  "image_id": "9ccXTANkb",
-  "sub_id": "my-user-1234"
-}
-
-
 
 // GET REQUEST
 function getCat() {
