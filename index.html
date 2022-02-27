@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+       
+       h1 {
+  text-align: center;
+}
+      .center {
+  padding: 40px 0;
+  text-align: center;
+}
+label {
+    display: inline-block;
+    font: bold 1.1em "serif";
+    min-width: 150px;
+}
+
+p{
+    display: flex;
+    border-bottom: 2px solid #b1a9a9;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 4px;
+}
+.rate{
+  
+    font: bold 0.5em "serif";
+    min-width: 50px;
+}
+.card-img-top{
+  height: auto;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+*{
+    margin: 0;
+}
+
+.header {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50px;
+    color: #ffffff;
+    align-items: center;
+    font-family: "Lato", sans-serif;
+  }
+
+  .vote:hover{
+      cursor: pointer;
+      color: wheat;
+      text-decoration: underline;
+  }
+
+  .images:hover{
+      cursor: pointer;
+      color: wheat;
+      text-decoration: underline;
+  }
+
+  .favourites:hover{
+      cursor: pointer;
+      color: wheat;
+      text-decoration: underline;
+  }
+
+  .upload:hover{
+      cursor: pointer;
+      color: wheat;
+      text-decoration: underline;
+  }
+
+  .body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20%;
+  }
+
+  .droparea{
+    height: 400px;
+    width: 700px;
+    border: 3px dashed rgb(27, 131, 172);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.droparea:hover{
+    background-color: #f4eeed;
+}
+
+.cloud-download{
+    color: rgb(27, 131, 172);
+    font-size: 190px;
+}
+
+.uploadIns{
+    display: flex;
+   justify-content: center;
+   text-align: center;
+    margin-top: 20px;
+    width: 700px;
+    font-size: 25px;
+    
+}
+
+.input__file{
+    margin-left: 70px;
+}
+
+.upload__file{
+    margin-left: 10px;
+}
+
+#bottom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    border: 2px solid rgb(252, 248, 248);
+    justify-content: center;
+}
+
+.rating {
+    --star-size: 3;  /* use CSS variables to calculate dependent dimensions later */
+    padding: 0;  /* to prevent flicker when mousing over padding */
+    border: none;  /* to prevent flicker when mousing over border */
+    unicode-bidi: bidi-override; direction: rtl;  /* for CSS-only style change on hover */
+    text-align: center;  /* revert the RTL direction */
+    user-select: none;  /* disable mouse/touch selection */
+    font-size: 3em;  /* fallback - IE doesn't support CSS variables */
+    font-size: calc(var(--star-size) * 1em);  /* because `var(--star-size)em` would be too good to be true */
+    cursor: pointer;
+    /* disable touch feedback on cursor: pointer - http://stackoverflow.com/q/25704650/1269037 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    margin-bottom: 1em;
+  }
+  /* the stars */
+  .rating > label {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;  /* magic number to overlap the radio buttons on top of the stars */
+    width: calc(var(--star-size) / 3 * 1.1em);
+  }
+  .rating > *:hover,
+  .rating > *:hover ~ label,
+  .rating:not(:hover) > input:checked ~ label {
+    color: transparent;  /* reveal the contour/white star from the HTML markup */
+    cursor: inherit;  /* avoid a cursor transition from arrow/pointer to text selection */
+  }
+  .rating > *:hover:before,
+  .rating > *:hover ~ label:before,
+  .rating:not(:hover) > input:checked ~ label:before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: gold;
+  }
+  .rating > input {
+    position: relative;
+    transform: scale(3);  /* make the radio buttons big; they don't inherit font-size */
+    transform: scale(var(--star-size));
+    /* the magic numbers below correlate with the font-size */
+    top: -0.5em;  /* margin-top doesn't work */
+    top: calc(var(--star-size) / 6 * -1em);
+    margin-left: -2.5em;  /* overlap the radio buttons exactly under the stars */
+    margin-left: calc(var(--star-size) / 6 * -5em);
+    z-index: 2;  /* bring the button above the stars so it captures touches/clicks */
+    opacity: 0;  /* comment to see where the radio buttons are */
+    font-size: initial; /* reset to default */
+  }
+  form.amp-form-submit-error [submit-error] {
+    color: red;
+  }
+
+  select#breeds, button#breed-info, button#likebtn, button#dislikebtn {
+    display: block;
+    background-color: #cde8e6;
+    font-size: 1em;
+    padding: 4px;
+    border: 2px solid rgb(21, 21, 21);
+    border-radius: 5px;
+    width: 200px;
+    margin: 10px auto;
+}
+
+section{
+    background-color: #ffffff;
+    border: 0px solid rgb(255, 255, 255);
+    border-radius: 0px;
+}
+
+section#left h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+section#left h5 {
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+section#right p{
+    display: flex;
+    border-bottom: 2px solid #b1a9a9;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 4px;
+}
+
+section#right label {
+    display: inline-block;
+    font: bold 1.2em "serif";
+    min-width: 150px;
+}
+
+section#right span {
+    display: inline-block;
+    font: normal 18px "serif";
+    min-width: 200px;
+}
+
+/*Flex Box*/
+section#bottom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    border: 2px solid black;
+    justify-content: center;
+}
+
+img {
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    width: 150px;
+    height: 150px;
+}
+
+/*CSS Grid*/
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "dropdown description";
+}
+
+section#left{
+    grid-area: dropdown;
+}
+
+section#right{
+    grid-area: description;
+}
+
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>KittyMatch</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/5a7b06498c.js" crossorigin="anonymous"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+
+
+    
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+          <h1><i class="fas fa-cat"></i> The KittyMatch page</h1>
+      </a>
+      <span class="navbar-text">
+        Welcome to the KittyMatch page. Find your perfect companion!!!
+      </span>
+    </nav>  
+
+    <div class="container-fluid">
+      <div class="center">
+        <h1>Breeds</h1>
+        <a href="index.html#Random Generator">Click Here To Go To The Kitty Match Random Generator</a> </br>
+        <a href="index.html#UploadCat">Click Here To Upload A New Kitty</a> </br>
+        <a href="index.html#Favourites">Click Here To View Your Favourite Matches</a>
+        <h5>Choose a cat breed</h5>
+        <select id="breeds">
+        </select>
+      <button id="show-a-cat" class="btn btn-info text-center">Click here to find out more about the breed!!!</button>
+      <p><label>Name:</label> <span id="name"></span></p>
+      <p><label>Description:</label> <span id="description"></span></p>
+      <p><label>Origin:</label> <span id="origin"></span></p>
+      <p><label>Life span:</label> <span id="life-span"></span></p>
+      <p><label>Child friendly:</label> <span id="child-friendly"></span></p>
+      <p><label>Dog friendly:</label> <span id="dog-friendly"></span></p>
+      <p><label>Energy level:</label> <span id="energy-level"></span></p>
+      <p><label>Social needs:</label> <span id="social-needs"></span></p>
+      <p><label>Learn more:</label> <a id="wiki" href="#"></a></p>
+      <div id="bottom"></div>
+      </div>
+    </div>
+  </br>
+</br>
+</br>
+<section id="Random Generator">
+    <h1>See Down Below For A Randomly Generated Kitty Match</h1>
+    <div class="container">
+      <div class="row-25">
+        <div class="col-6"></div>
+        <div class="col-6 container-fluid">
+          <div class="card">
+
+
+            <div class="card-body">
+              <div id="gato"></div>
+            <h5 class="card-title text-center">Isn't it CUTE?</h5>
+            <h6 class="card-title text-center">Give this kitty match for you a rating!!!</h6>
+            <fieldset class="rating">
+          <input name="rating" type="radio" id="rating5" value="5" on="change:rating.submit">
+          <label class="rate" for="rating5" title="5 stars">☆</label>
+      
+          <input name="rating" type="radio" id="rating4" value="4" on="change:rating.submit">
+          <label class="rate" for="rating4" title="4 stars">☆</label>
+      
+          <input name="rating" type="radio" id="rating3" value="3" on="change:rating.submit">
+          <label class="rate" for="rating3" title="3 stars">☆</label>
+      
+          <input name="rating" type="radio" id="rating2" value="2" on="change:rating.submit" checked="checked">
+          <label class="rate" for="rating2" title="2 stars">☆</label>
+      
+          <input name="rating" type="radio" id="rating1" value="1" on="change:rating.submit">
+          <label  for="rating1" class="rate" title="1 stars">☆</label>
+        </fieldset>
+        <div submit-success>
+          <template type="amp-mustache">
+            <p>Thanks for rating {{rating}} star(s)!</p>
+          </template>
+        </div>
+        <div submit-error>
+          <template type="amp-mustache">
+            Looks like something went wrong. Please try to rate again. {{error}}
+          </template>
+        </div>
+              <div class="buttons text-center">
+                <button id="cute" class="btn btn-info">Awww I Like! Favourite This kitty</button>
+                <button id="ugly" class="btn btn-danger">Mmmm I Think Not</button>
+              </div>
+            </div>
+              
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+  </section>
+  <section id="UploadCat">
+    <div class="body">
+      <h1>See Down Below To Upload A New Kitty</h1>
+      <div class="droparea">
+          <span class="cloud-download"><i class="fa fa-cloud-download" aria-hidden="true"></i></span>
+          <div class="input__file">
+            <input type="file"  onchange="uploadcat(this)" id="uploadimage" class="upload__file"/>
+          </div>
+          
+
+          
+      </div>
+      <p class="uploadIns">Click the Choose File button to upload a .jpg or .png image then click on the cloud to upload it</p>
+  </div>
+  </section>
+   
+    <section id="Favourites">
+   <div class="container">
+      <div class="center">
+        <h1>Click The Button Down Below To View Your Favourite Matches</h1>
+      <button id="check-votes" class="btn btn-success text-center">Check Your Favourites</button>
+      </div>
+    </div>
+
+    <div id="votos"></div>
+  </section>
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="app.js"></script>
+    <script src="breedinfo.js"></script>
+    
+  </body>
+</html>
